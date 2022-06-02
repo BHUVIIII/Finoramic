@@ -1,0 +1,16 @@
+stack=[]
+flag = False
+for i in string:
+    if i==')':
+        top = stack.pop()
+        flag = True
+        while(top!='('):
+            if top =='+' or top=='-' or top=='*' or top=='/':
+                flag = False
+            top = stack.pop()
+        if flag:
+            print(1)
+    else:
+        stack.append(i)
+if (flag==False):
+    print(0)
